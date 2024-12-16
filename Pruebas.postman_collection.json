@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "8c0f9193-5897-48a9-a673-96a7a6ab8cca",
+		"name": "Pruebas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38791146",
+		"_collection_link": "https://tmdb77.postman.co/workspace/TMDB-Workspace~6484ed15-8017-4c91-b57b-4fbe49e69ae1/collection/38791146-8c0f9193-5897-48a9-a673-96a7a6ab8cca?action=share&source=collection_link&creator=38791146"
+	},
+	"item": [
+		{
+			"name": "GetAllPlaces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/place",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"place"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/place/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"place",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddPlace",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 3,\r\n        \"name\": \"AAAAAA\",\r\n        \"address\": \"BBBBBBB\",\r\n        \"coords\": \"000000, -000000\",\r\n        \"desc\": \"CCCCCCCCCC\",\r\n        \"tags\": [\r\n            \"TAG 1\",\r\n            \"TAG 2\",\r\n            \"TAG 3\"\r\n        ],\r\n        \"image\": \"Foto\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/place",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"place"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditPlace",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 3,\r\n        \"name\": \"OBJETO EDITADO\",\r\n        \"address\": \"EDITADO CON EXITO\",\r\n        \"coords\": \"99999, -999999\",\r\n        \"desc\": \"DE VERDAD QUE HA FUNCIONADO\",\r\n        \"tags\": [\r\n            \"TAG 1\",\r\n            \"TAG 2\",\r\n            \"TAG 3\"\r\n        ],\r\n        \"image\": \":)\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/place/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"place",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePlace",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/place/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"place",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTag",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/place/1/tag/add/TAG4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"place",
+						"1",
+						"tag",
+						"add",
+						"TAG4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTag",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/tag/del/TAG4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"tag",
+						"del",
+						"TAG4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
